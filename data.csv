@@ -1,0 +1,219 @@
+﻿Acronym,Name,File Name,Include
+AAA,Authentication Authorization Accounting,ssin_it_l01.pdf,1
+ACN,Agenzia per la Cybersicurezza Nazionale,ssin_it_l01.pdf,1
+CIA,Confidentiality Integrity Availability,ssin_it_l01.pdf,1
+CSIRT,Computer Security Incident Response Team,ssin_it_l01.pdf,1
+IOC,Indicator of Compromise,ssin_it_l01.pdf,1
+MISP,Malware Information Sharing Platform,ssin_it_l01.pdf,1
+NCSC,National Cyber Security Center,ssin_it_l01.pdf,1
+OSINT,Open Source Intelligence,ssin_it_l01.pdf,1
+OTX,Open Threat Exchange,ssin_it_l01.pdf,1
+TTP,Tactics Techniques Procedures,ssin_it_l01.pdf,1
+AES,Advanced Encryption Security,ssin_it_l02.pdf,1
+CBC,Cipher Block Chaining,ssin_it_l02.pdf,1
+CTR,Counter Mode,ssin_it_l02.pdf,1
+DES,Data Encryption Standard,ssin_it_l02.pdf,1
+DSA,Digital Signature Algorithm,ssin_it_l02.pdf,1
+ECB,Electronic Code Book,ssin_it_l02.pdf,1
+ECC,Elliptic Curve Cryptography,ssin_it_l02.pdf,1
+ECDH,Elliptic Curve Diffie Hellman,ssin_it_l02.pdf,1
+ECDHE,Elliptic Curve Diffie Hellman Epremeral,ssin_it_l02.pdf,1
+ECDSA,Elliptic Curve Digital Signature Algorithm,ssin_it_l02.pdf,1
+GCM,Galois Counter Mode,ssin_it_l02.pdf,1
+GPG,Gnu Privacy Guard,ssin_it_l02.pdf,1
+HMAC,Hash based Message Authentication Code,ssin_it_l02.pdf,1
+NIST,National Institute of Standards and Technology,ssin_it_l02.pdf,1
+PBKDF2,Password Based Key Derivation Function 2,ssin_it_l02.pdf,1
+PGP,Pretty Good Privacy,ssin_it_l02.pdf,1
+PKI,Public Key Infrastructure,ssin_it_l02.pdf,1
+PRNG,Pseudo Random Number Generator,ssin_it_l02.pdf,1
+RC4,Rivest Cipher 4,ssin_it_l02.pdf,1
+RIPEMD,Race Integrity Primitive Evaluation Message Digest,ssin_it_l02.pdf,1
+RSA,Rivest Shamir Adleman,ssin_it_l02.pdf,1
+SHA,Secure Hash Algorithm,ssin_it_l02.pdf,1
+SIDH,Supersingular Isogeny Diffie Hellman,ssin_it_l02.pdf,1
+AH,Authentication Header,ssin_it_l03.pdf,1
+BER,Basic Encoding Rules,ssin_it_l03.pdf,1
+CA,Certification Authority,ssin_it_l03.pdf,1
+CER,Canonical Encoding Rules,ssin_it_l03.pdf,1
+CRL,Certificate Revocation List,ssin_it_l03.pdf,1
+CSL,Certificate Suspension List,ssin_it_l03.pdf,1
+CSR,Certificate Signing Request,ssin_it_l03.pdf,1
+DER,Distinguished Encoding Rules,ssin_it_l03.pdf,1
+EAP,Extensible Authentication Protocol,ssin_it_l03.pdf,1
+ESP,Encapsulating Security Payload,ssin_it_l03.pdf,1
+IKE,Internet Key Exchange,ssin_it_l03.pdf,1
+L2TP,Level 2 Tunnelling Protocol,ssin_it_l03.pdf,1
+LDAP,Lightweight Directory Access Protocol,ssin_it_l03.pdf,1
+OCSP,Online Certificate Status Protocol,ssin_it_l03.pdf,1
+PEM,Privacy Enhanced Electronic Mail,ssin_it_l03.pdf,1
+PKCS#12,Public Key Cryptographic System # 12,ssin_it_l03.pdf,1
+PPTP,Point to Point Protocol,ssin_it_l03.pdf,1
+RA,Registration Authority,ssin_it_l03.pdf,1
+SA,Security Association,ssin_it_l03.pdf,1
+TLS,Transport Layer Security,ssin_it_l03.pdf,1
+APT,Advanced Persistent Threat,ssin_it_l04.pdf,1
+AQT,Auto Quarantine,ssin_it_l04.pdf,1
+C2,Command and Control,ssin_it_l04.pdf,1
+EDR,Endpoint Detection and Response,ssin_it_l04.pdf,1
+FTP,File Transfer Protocol,ssin_it_l04.pdf,1
+LOTL,Living Off the Land,ssin_it_l04.pdf,1
+RAT,Remote Access Trojan,ssin_it_l04.pdf,1
+TDT,intel Threat Detection Technology,ssin_it_l04.pdf,1
+ASLR,Address Space Layout Randomization,ssin_it_l06.pdf,1
+COW,Copy On Write,ssin_it_l06.pdf,1
+DLL,Dynamic Link Library,ssin_it_l06.pdf,1
+DOM,Document Object Model,ssin_it_l06.pdf,1
+HTML,Hypertext Markup Language,ssin_it_l06.pdf,1
+NOP,No Operation,ssin_it_l06.pdf,1
+RCE,Remote Code Execution,ssin_it_l06.pdf,1
+SDLC,Software Development Life Cycle,ssin_it_l06.pdf,1
+SEH,Structured Exception Handling,ssin_it_l06.pdf,1
+SQL,Structured Query Language,ssin_it_l06.pdf,1
+TOCTTOU,Time Of Check To Time Of Use,ssin_it_l06.pdf,1
+XSRF,Cross Site Request Forgery,ssin_it_l06.pdf,1
+XXE,XML External Entity,ssin_it_l06.pdf,1
+ALG,Application Layer Gateway,ssin_it_l07.pdf,1
+DNS,Domain Name System,ssin_it_l07.pdf,1
+MAC (criptography),Message Authentication Code,ssin_it_l07.pdf,1
+MITB,Man In The Browser,ssin_it_l07.pdf,1
+NAC,Network Access Control,ssin_it_l07.pdf,1
+NGFW,Next Generation Firewall,ssin_it_l07.pdf,1
+NIDS,Network Intrusion Detection System,ssin_it_l07.pdf,1
+NIPS,Network Intrusion Prevention System,ssin_it_l07.pdf,1
+NTP,Network Time Protocol,ssin_it_l07.pdf,1
+RADIUS,Remote Authentication Dial In User Service,ssin_it_l07.pdf,1
+RDP,Remote Desktop Protocol,ssin_it_l07.pdf,1
+SMB,Server Message Block,ssin_it_l07.pdf,1
+TOTP,Time based One Time Password,ssin_it_l07.pdf,1
+UTM,Unified Threat Management,ssin_it_l07.pdf,1
+WAF,Web Application Firewall,ssin_it_l07.pdf,1
+XSS,Cross Site Scripting,ssin_it_l07.pdf,1
+ACL,Access Control List,ssin_it_l08.pdf,1
+AK,Authentication Key,ssin_it_l08.pdf,1
+CAM,Content Addressable Memory,ssin_it_l08.pdf,1
+DEK,Data Encryption Key,ssin_it_l08.pdf,1
+DMZ,Demilitarized Zone,ssin_it_l08.pdf,1
+EFS,Encrypted File System,ssin_it_l08.pdf,1
+EPP,Endpoint Protection Platform,ssin_it_l08.pdf,1
+HIDS,Host based Intrusion Detection System,ssin_it_l08.pdf,1
+HIPS,Host based Intrusion Prevention System,ssin_it_l08.pdf,1
+HSM,Hardware Security Module,ssin_it_l08.pdf,1
+IPS,Intrusion Prevention System,ssin_it_l08.pdf,1
+MDR,Managed Detection and Response,ssin_it_l08.pdf,1
+PBX,Private Branch Exchange,ssin_it_l08.pdf,1
+PF,Packet Filter,ssin_it_l08.pdf,1
+SED,Self Encrypting Drive,ssin_it_l08.pdf,1
+XDR,Extended Detection and Response,ssin_it_l08.pdf,1
+COBO,Corporate Owned Business Owned,ssin_it_l09.pdf,1
+COPE,Corporate Owned Personal Enabled,ssin_it_l09.pdf,1
+COSU,Corporate Owned Single Use,ssin_it_l09.pdf,1
+EMM,Enterprise Mobility Management,ssin_it_l09.pdf,1
+IMSI,International Mobile Subscriber Identity,ssin_it_l09.pdf,1
+MAM,Mobile Application Management,ssin_it_l09.pdf,1
+MCC,Mobile Country Code,ssin_it_l09.pdf,1
+MCM,Mobile Content Manager,ssin_it_l09.pdf,1
+MDM,Mobile Device Management,ssin_it_l09.pdf,1
+MEM,Mobile Email Manager,ssin_it_l09.pdf,1
+MNC,Mobile Network Code,ssin_it_l09.pdf,1
+MTD,Mobile Threat Defense,ssin_it_l09.pdf,1
+UEM,Unified Endpoint Management,ssin_it_l09.pdf,1
+BYOK,Bring Your Own Key,ssin_it_l10.pdf,1
+GPO,Group Policy Object,ssin_it_l10.pdf,1
+HYOK,Hold Your Own Key,ssin_it_l10.pdf,1
+MECM,Microsoft Endpoint Configuration Manager,ssin_it_l10.pdf,1
+ROT,Root Of Trust,ssin_it_l10.pdf,1
+TXT,intel Trusted Execution Technology,ssin_it_l10.pdf,1
+SEV,amd Secure Encrypted Virtualization,ssin_it_l10.pdf,1
+SGX,intel Software Guard Execution,ssin_it_l10.pdf,1
+SME,amd Secure Memory Encryption,ssin_it_l10.pdf,1
+TOS,Trusted Operating System,ssin_it_l10.pdf,1
+TPM,Trusted Platform Module,ssin_it_l10.pdf,1
+UEFI,Unified Extensible Firmware Interface,ssin_it_l10.pdf,1
+CASB,Cloud Access Security Broker,ssin_it_l11.pdf,1
+CSPM,Cloud Security Posture Management,ssin_it_l11.pdf,1
+CWPP,Cloud Workload Protection Platform,ssin_it_l11.pdf,1
+HCI,Hyperconverged Infrastructure,ssin_it_l11.pdf,1
+IAM,Identity and Access Management,ssin_it_l11.pdf,1
+SASE,Security Access Service Edge,ssin_it_l11.pdf,1
+SWG,Secure Web Gateway,ssin_it_l11.pdf,1
+UEBA,User and Entity Behavior Analytics,ssin_it_l11.pdf,1
+VDI,Virtual Desktop Infrastructure,ssin_it_l11.pdf,1
+VPC,Virtual Private Cloud,ssin_it_l11.pdf,1
+ZTNA,Zero Trust Network Access,ssin_it_l11.pdf,1
+BAS,Building Automation System,ssin_it_l12.pdf,1
+CPSS,Central Power Supply System,ssin_it_l12.pdf,1
+EMI,Electromagnetic Interference,ssin_it_l12.pdf,1
+EMP,Electromagnetic Pulse,ssin_it_l12.pdf,1
+ERR,Equal Error Rate,ssin_it_l12.pdf,1
+CER (Biometria),Crossover Error Rate,ssin_it_l12.pdf,1
+FAR,False Acceptance Rate,ssin_it_l12.pdf,1
+FRR,False Rejection Rate,ssin_it_l12.pdf,1
+ICS,Industrial Control System,ssin_it_l12.pdf,1
+OT,Operational Technology,ssin_it_l12.pdf,1
+PACS,Physical Agent Control System,ssin_it_l12.pdf,1
+RFI,Radiofrequency Interference,ssin_it_l12.pdf,1
+ABAC,Attribute Based Access Control,ssin_it_l13.pdf,1
+ADUC,Active Directory Users and Computers,ssin_it_l13.pdf,1
+CHAP,Challenge Handshake Authentication Protocol,ssin_it_l13.pdf,1
+DAC,Discretionary Access Control,ssin_it_l13.pdf,1
+FIM,Federated Identity Management,ssin_it_l13.pdf,1
+HOTP,HMAC based One Time Password,ssin_it_l13.pdf,1
+OIDC,Open ID Connect,ssin_it_l13.pdf,1
+PAP,Password Authentication Protocol,ssin_it_l13.pdf,1
+PEAP,Protected Extensible Authentication Protocol,ssin_it_l13.pdf,1
+RBAC,Role Based Access Control,ssin_it_l13.pdf,1
+SAML,Security Assertion Markup Language,ssin_it_l13.pdf,1
+SSL,Secure Socket Layer,ssin_it_l13.pdf,1
+SSO,Single Sign On,ssin_it_l13.pdf,1
+TGT,Ticket Granting Ticket,ssin_it_l13.pdf,1
+TTLS,Tunneled Transport Layer Security,ssin_it_l13.pdf,1
+UAC,User Account Control,ssin_it_l13.pdf,1
+ALE,Annual Loss Expectancy,ssin_it_l14.pdf,1
+ARO,Annual Rate of Occurence,ssin_it_l14.pdf,1
+EF,Exposure Factor,ssin_it_l14.pdf,1
+GRC,Governance Risk and Compliance,ssin_it_l14.pdf,1
+OVAL,Open Vulnerability and Assessment Language,ssin_it_l14.pdf,1
+SLE,Service Level,ssin_it_l14.pdf,1
+VNC,Virtual Network Computing,ssin_it_l14.pdf,1
+ELK,Elasticsearch Logstash Kibana,ssin_it_l15.pdf,1
+NMS,Network Management System,ssin_it_l15.pdf,1
+OSSIM,Open Source Security Information Management,ssin_it_l15.pdf,1
+PRI,Priority,ssin_it_l15.pdf,1
+RCA,Root Cause Analysis,ssin_it_l15.pdf,1
+SOAR,Security Orchestration Automation Response,ssin_it_l15.pdf,1
+SPAN,Switch Port Analyser,ssin_it_l15.pdf,1
+WORM,Write Once Read Many,ssin_it_l15.pdf,0
+BCP,Business Continuity Plan,ssin_it_l16.pdf,1
+BIA,Business Impact Analysis,ssin_it_l16.pdf,1
+RPO,Recovery Point Objective,ssin_it_l16.pdf,1
+RTO,Recovery Time Objective,ssin_it_l16.pdf,1
+SPOF,Single Point Of Failure,ssin_it_l16.pdf,1
+WRT,Work Recovery Time,ssin_it_l16.pdf,1
+AUP,Acceptable Use Policy,ssin_it_l17.pdf,1
+BPA,Business Partnership Agreement,ssin_it_l17.pdf,1
+CIS,Center for Internet Security,ssin_it_l17.pdf,1
+COBIT,Control OBjectives for Information and related Technologies,ssin_it_l17.pdf,1
+COPPA,Children's Online Privacy Protection Act,ssin_it_l17.pdf,1
+CUDS,Collect Use Disclosure Store,ssin_it_l17.pdf,1
+CYOD,Choose Your Own Device,ssin_it_l17.pdf,1
+DPO,Data Protection Officier,ssin_it_l17.pdf,1
+FERPA,Family Educational Rights and Privacy Act,ssin_it_l17.pdf,1
+FISMA,Federal Information Security Management Act,ssin_it_l17.pdf,1
+GLBA,Gramm Leach Biley Act,ssin_it_l17.pdf,0
+ISA,Interconnect Security Agreement,ssin_it_l17.pdf,1
+ITIL,Information Technology Infrastructure Library,ssin_it_l17.pdf,1
+MOU,Memorandum Of Understanding,ssin_it_l17.pdf,1
+NDA,Non Disclosure Agreement,ssin_it_l17.pdf,1
+PCI-DSS,Payment Card Industry Data Security Standard,ssin_it_l17.pdf,1
+SABSA,Sherwood Applied Business Security Architecture,ssin_it_l17.pdf,1
+SLA,Service Level Agreement,ssin_it_l17.pdf,1
+SNMP,Simple Network Management Protocol,ssin_it_l17.pdf,1
+SOC,Security Operations Center,ssin_it_l17.pdf,1
+SOX,Sarbanes Oxley Act,ssin_it_l17.pdf,0
+BYOD,Bring Your Own Device,ssin_it_l18.pdf,1
+CEM,Critical Event Management,ssin_it_l18.pdf,1
+CERT,Computer Emergency Response Team,ssin_it_l18.pdf,1
+BeEF,Browser Exploitation Framework,ssin_it_l18.pdf,1
+MSF,Metasploit,ssin_it_l18.pdf,1
+SIEM,Security Information and Event Manager,ssin_it_l18.pdf,1

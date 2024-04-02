@@ -1,0 +1,648 @@
+<!-- written by Gabriele Favia, https://www.linkedin.com/in/gabriele-favia/ -->
+<!-- this script follows the Creative Commons BY-NC 4.0, so you can freely distribute this software. -->
+<!-- you can edit or improve and then distribute this script only if you keep the name of the author (Gabriele Favia) in it (beside yours) -->
+<!-- you cannot sell this software and you cannot get any economic gain from this software under any circumstances -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acronyms Guessing Exercise</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            display: flex;
+            margin-bottom: -50px;
+        }
+
+        .main {
+            width: fit-content;
+            margin: auto;
+        }
+
+        .footer,
+        .push {
+            height: 50px;
+        }
+
+        .footer {
+            text-align: center;
+            color: gray;
+        }
+
+        #card-wrapper {
+            min-width: 300px;
+            width: fit-content;
+        }
+
+        .card-container {
+            display: grid;
+            grid-gap: 20px;
+            width: fit-content;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation-duration: 0.1s;
+            animation-timing-function: linear;
+        }
+
+        .word {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .phrase {
+            font-style: italic;
+            margin-bottom: 10px;
+            word-spacing: 8px;
+        }
+
+        input[type="text"] {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .counter {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .counter span {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+
+        .flash-red {
+            animation-name: flash-red;
+        }
+
+        .flash-green {
+            animation-name: flash-green;
+        }
+
+        @keyframes flash-red {
+            0% {
+                background-color: inherit;
+            }
+
+            50% {
+                background-color: red;
+            }
+
+            100% {
+                background-color: inherit;
+            }
+        }
+
+        @keyframes flash-yellow {
+            0% {
+                background-color: inherit;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color: inherit;
+            }
+        }
+
+        @keyframes flash-green {
+            0% {
+                background-color: inherit;
+            }
+
+            50% {
+                background-color: green;
+            }
+
+            100% {
+                background-color: inherit;
+            }
+        }
+
+        /* Dark mode styles */
+        .dark-mode-switch {
+            text-align: center;
+            margin-top: 1em;
+            padding: 0.3em;
+        }
+
+        body.dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .card.dark-mode {
+            background-color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .counter.dark-mode {
+            color: #fff;
+        }
+
+        .flash-red.dark-mode {
+            background-color: red;
+        }
+
+        .flash-yellow.dark-mode {
+            background-color: yellow;
+        }
+
+        .flash-green.dark-mode {
+            background-color: green;
+        }
+
+        .timer-switch {
+            text-align: center;
+            margin-top: 1em;
+            padding: 0.3em;
+        }
+
+        #gameover {
+            color: cadetblue;
+        }
+
+        #progress-bar-container {
+            display: none;
+            /* Hide progress bar container by default */
+            width: 100%;
+            margin-top: 20px;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            width: 100%;
+            height: 100%;
+            background-color: #4CAF50;
+            animation: progress-animation 10s linear forwards;
+        }
+
+        @keyframes progress-animation {
+            0% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div id="card-wrapper">
+                <div id="card-container"></div>
+            </div>
+            <div>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="counter">Total correct guesses: <span id="totalCorrectGuesses">0</span></div>
+                <div class="counter">Total questions: <span id="totalQuestions">0</span></div>
+                <div class="dark-mode-switch">
+                    <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()" checked>
+                    <label for="darkModeToggle">Dark mode</label>
+                </div>
+                <div class="timer-switch">
+                    <input type="checkbox" id="timerToggle">
+                    <label for="timerToggle">Timer duration:</label>
+                    <select id="timerDuration" onchange="changeTimerDuration()">
+                        <option value="5">5 seconds</option>
+                        <option value="10">10 seconds</option>
+                        <option value="15" selected>15 seconds</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="push"></div>
+    </div>
+
+    <footer class="footer">
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span
+                property="dct:title">Acronyms Guessing Exercise</span> by <span property="cc:attributionName">Gabriele
+                Favia</span> is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+                target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
+    </footer>
+
+    <script>
+        let totalCorrectGuesses = 0;
+        let totalQuestions = 0;
+        let data = [];
+        let container = document.getElementById('card-container');
+        let timerEnabled = false; // Flag to indicate whether the timer is enabled or not
+        let timeoutID;
+        let currentIndex = -1; // Initialize currentIndex to -1
+        let previousIndex = -1; // Initialize previousIndex to -1
+        let timerRunning = false; // Flag to track whether a timer is currently running
+        let timerDuration = parseInt(document.getElementById('timerDuration').value) * 1000; // Default timer duration
+
+
+        function setCharAt(str, index, chr) {
+            if (index > str.length - 1) return str;
+            return str.substring(0, index) + chr + str.substring(index + 1);
+        }
+
+        function shuffle(array) {
+            array.sort(() => Math.random() - 0.5);
+        }
+
+        function getData() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'data.csv');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const lines = xhr.responseText.split('\n');
+                    for (let i = 1; i < lines.length; i++) {
+                        const line = lines[i];
+
+                        if (line.trim()) {
+                            let [word, phrase, sourcefile, include] = line.split(',');
+                            word = word.trim();
+                            phrase = phrase.trim();
+                            sourcefile = sourcefile.trim();
+                            include = include.trim();
+                            if (parseInt(include) === 1) {
+                                data.push({ word, phrase, guessedLetters: replaceAllCharactersExcept(phrase, [' ']), guessed: false, sourcefile });
+                            }
+                        }
+                    }
+                    totalQuestions = data.length;
+                    shuffle(data);
+                    displayNextCard();
+                    updateCounters();
+                } else {
+                    console.error('Failed to load data');
+                }
+            };
+            xhr.send();
+        }
+
+        function getMultipleIndexOf(str, searchQuery, acc = 0, result = []) {
+            if (!str || !searchQuery) {
+                return { result, acc };
+            }
+            const foundIndex = str.toLowerCase().indexOf(searchQuery.toLowerCase());
+            if (foundIndex < 0) {
+                return { result, acc };
+            }
+            return getMultipleIndexOf(
+                str.slice(foundIndex + searchQuery.length),
+                searchQuery,
+                acc + foundIndex + searchQuery.length,
+                [...result, acc + foundIndex]
+            );
+        }
+
+        function removeDuplicates(array) {
+            return [...new Set(array)];
+        };
+
+        function replaceAllCharactersExcept(stringToReplace, letterArray) {
+            const words = stringToReplace.split(' ');
+            const sanitizedLetters = letterArray.map(letter => letter.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'));
+            let maskedPhrase = '';
+
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                if (/[A-ZÀ-Ú]/.test(word[0])) {
+                    maskedPhrase += word.replaceAll(new RegExp(`[^${sanitizedLetters.join('')}]`, 'g'), '-');
+                } else {
+                    maskedPhrase += word;
+                }
+                if (i < words.length - 1) {
+                    maskedPhrase += ' ';
+                }
+            }
+            return maskedPhrase;
+        }
+
+        function replaceSpecificCharacterInSet(arrayToManage, oldCharacter, newCharacter) {
+            const index = arrayToManage.indexOf(oldCharacter);
+
+            if (index !== -1) {
+                arrayToManage[index] = newCharacter;
+            }
+            return arrayToManage;
+        }
+
+        function maskWords(phrase, guessedLetters) {
+            return guessedLetters;
+        }
+
+        function startProgressBarAnimation() {
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            progressBarContainer.style.display = 'block'; // Show progress bar container
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.animation = 'none'; // Reset animation
+            progressBar.offsetHeight; /* Trigger reflow */
+            progressBar.style.animation = `progress-animation ${timerDuration / 1000}s linear forwards`; // Start animation
+        }
+
+        function stopProgressBarAnimation() {
+            timerRunning = false;
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            progressBarContainer.style.display = 'none'; // Hide progress bar container
+        }
+
+        function displayNextCardWithTimeout() {
+            if (timerEnabled && !timerRunning) { // Check if timer is enabled and no timer is currently running
+                timerRunning = true; // Set the flag to indicate that a timer is running
+                timeoutID = setTimeout(() => {
+                    timerRunning = false; // Reset the flag when the timer completes
+                    displayNextCard(); // Display the next card after the timeout
+                }, timerDuration);
+            } else {
+                stopProgressBarAnimation(); // Stop the progress bar animation if timer is disabled or a timer is already running
+            }
+        }
+
+
+        function displayNextCard() {
+            previousIndex = currentIndex; // Store the current index as the previous index
+            currentIndex = findNotAnsweredQuestionIndex(previousIndex);
+            if (currentIndex < 0) {
+                container.innerHTML = '<div class="card" id="gameover">Game Over</div>';
+                return;
+            }
+
+            //shuffle(data);
+            const { word, phrase, guessedLetters, guessed, sourcefile } = data[currentIndex];
+            container.innerHTML = '';
+            const card = document.createElement('div');
+            card.classList.add('card');
+            if (document.body.classList.contains('dark-mode')) {
+                card.classList.add('dark-mode');
+            }
+            card.innerHTML = `
+                <div class="word">${word}</div>
+                <div class="phrase" id="phrase">${maskWords(phrase, guessedLetters)}</div>
+                <input type="text" id="guessInput" placeholder="Enter your guess" onkeypress="checkEnter(event)">
+                <button onclick="checkGuess()">Submit Guess</button>
+                <button onclick="giveHint()">Hint</button>
+                <div style="font-size: 13px; color: gray;">source file: ${sourcefile}</div>
+            `;
+            container.appendChild(card);
+            document.getElementById('guessInput').focus();
+
+            if (timerEnabled) {
+                startProgressBarAnimation(); // Start the progress bar animation if timer is enabled
+            } else {
+                stopProgressBarAnimation(); // Stop the progress bar animation if timer is disabled
+            }
+
+            displayNextCardWithTimeout();
+        }
+
+        function toggleTimer() {
+            timerEnabled = !timerEnabled; // Toggle the timer flag
+            const timerToggle = document.getElementById('timerToggle');
+            const timerDurationSelect = document.getElementById('timerDuration');
+
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            if (!timerEnabled) {
+                timerRunning = false;
+                clearTimeout(timeoutID); // Clear the timeout if timer is disabled
+            }
+            timerDurationSelect.disabled = timerEnabled && !timerRunning;
+            progressBarContainer.style.display = timerEnabled ? 'block' : 'none'; // Toggle display property
+            if (timerEnabled) {
+                displayNextCardWithTimeout(); // Start displaying cards with timeout if timer is enabled
+            }
+        }
+
+        function overwriteString(originalString, substring, position) {
+            if (position < 0 || position > originalString.length) {
+                throw new Error("Invalid position for overwriting");
+            }
+
+            startingPart = originalString.slice(0, position);
+            endindgPart = originalString.slice(position + substring.length);
+            checkingPartInput = originalString.slice(position, position + substring.length);
+            middlePart = [];
+            for (var i = 0; i < checkingPartInput.length; i++) {
+                currentLetter = checkingPartInput[i];
+                if (currentLetter === "-") {
+                    middlePart.push(substring[i]);
+                } else {
+                    middlePart.push(currentLetter);
+                }
+            }
+            middlePart = middlePart.join('');
+            return (
+                startingPart +
+                middlePart +
+                endindgPart
+            );
+        }
+
+        // Add an event listener to the Timer toggle
+        document.getElementById('timerToggle').addEventListener('change', function () {
+            //console.log("is pressed");
+            toggleTimer();
+        });
+
+        function checkGuess() {
+            const guessInput = document.getElementById('guessInput');
+            const guess = guessInput.value.trim().toUpperCase();
+            const { phrase } = data[currentIndex];
+
+            clearTimeout(timeoutID); // Clear the timeout
+
+            if (guess === phrase.toUpperCase()) {
+                totalCorrectGuesses++;
+                data[currentIndex].guessed = true;
+                container.firstChild.classList.add('flash-green');
+                setTimeout(() => {
+                    container.firstChild.classList.remove('flash-green');
+                    displayNextCard(); // Display next card after a correct guess
+                }, 100);
+            } else {
+                const guessUpper = guess.toUpperCase();
+                const phraseUpper = phrase.toUpperCase();
+                const guessPhrases = guessUpper.split(' ');
+                const phraseWords = phraseUpper.split(' ');
+
+                let currentGuessedLetters = data[currentIndex].guessedLetters;
+                let atLeastOneLetterCorrect = false; // Flag to track if at least one letter is correct
+
+                guessPhrases.forEach(guessWord => {
+                    if (guessWord.length > 0) {
+                        if (phraseUpper.includes(guessWord)) {
+                            const indices_found = getMultipleIndexOf(phraseUpper, guessWord).result;
+                            for (let i = 0; i < indices_found.length; i++) {
+                                const guessIndex = indices_found[i];
+                                const guessedLetter = currentGuessedLetters[guessIndex];
+                                currentGuessedLetters = overwriteString(currentGuessedLetters, guessWord, guessIndex);
+                                data[currentIndex].guessedLetters = currentGuessedLetters;
+
+                                if (guessedLetter === '-') {
+                                    atLeastOneLetterCorrect = true; // Set the flag if at least one letter is correct
+                                }
+                            }
+                        }
+                    }
+                });
+
+                if (atLeastOneLetterCorrect) {
+                    container.firstChild.classList.add('flash-yellow'); // Add flash-yellow class
+                } else {
+                    container.firstChild.classList.add('flash-red');
+                }
+
+                setTimeout(() => {
+                    container.firstChild.classList.remove('flash-red');
+                    container.firstChild.classList.remove('flash-yellow'); // Remove flash-yellow class
+                    displayNextCard(); // Display next card after an incorrect guess
+                }, 100);
+            }
+            updateCounters();
+            guessInput.value = '';
+
+            if (timerEnabled) {
+                if (!data[currentIndex].guessed) {
+                    startProgressBarAnimation();
+                    displayNextCardWithTimeout();
+                } else {
+                    stopProgressBarAnimation();
+                }
+            } else {
+                stopProgressBarAnimation();
+            }
+        }
+
+
+        function giveHint() {
+            const { phrase, guessedLetters } = data[currentIndex];
+            const hyphenIndices = [];
+            for (let i = 0; i < guessedLetters.length; i++) {
+                if (guessedLetters[i] === '-') {
+                    hyphenIndices.push(i);
+                }
+            }
+            if (hyphenIndices.length > 0) {
+                const hintIndex = hyphenIndices[Math.floor(Math.random() * hyphenIndices.length)];
+                const updatedGuessedLetters = guessedLetters.split('');
+                updatedGuessedLetters[hintIndex] = phrase[hintIndex].toUpperCase();
+                data[currentIndex].guessedLetters = updatedGuessedLetters.join('');
+                phraseToDisplay = maskWords(phrase, updatedGuessedLetters);
+                document.getElementById('phrase').innerHTML = phraseToDisplay.join('').replaceAll(",", '');
+            }
+        }
+
+        function updateCounters() {
+            document.getElementById('totalCorrectGuesses').innerText = totalCorrectGuesses;
+            document.getElementById('totalQuestions').innerText = totalQuestions;
+        }
+
+        function checkEnter(event) {
+            if (event.keyCode === 13) {
+                checkGuess();
+            }
+        }
+
+        window.onload = function () {
+            toggleDarkMode();
+            getData();
+            displayNextCard();
+        };
+
+        function findNotAnsweredQuestionIndex(previousIndex) {
+            let wantedIndex = -1;
+            if (totalQuestions - totalCorrectGuesses > 1) {
+
+                let availableIndices = [];
+                for (let i = 0; i < data.length; i++) {
+                    if (!data[i]['guessed'] && i !== previousIndex) {
+                        availableIndices.push(i); // Store available indices except the previous one
+                    }
+                }
+                if (availableIndices.length > 0) {
+                    wantedIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+                }
+            } else {
+                // the last one
+                for (let i = 0; i < data.length; i++) {
+                    if (!data[i]['guessed']) {
+                        wantedIndex = i; // Store available indices except the previous one
+                        break;
+                    }
+                }
+            }
+            return wantedIndex;
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.classList.toggle('dark-mode');
+            });
+        }
+
+        function changeTimerDuration() {
+            const seconds = parseInt(document.getElementById('timerDuration').value);
+            const progressBar = document.getElementById('progress-bar');
+            timerDuration = seconds * 1000;
+            progressBar.style.animation = `progress-animation ${seconds}s linear forwards`;
+        }
+    </script>
+</body>
+
+</html>

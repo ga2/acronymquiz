@@ -1,0 +1,51 @@
+## Far partire lo script
+# Avviare il server python (dando per scontato che si abbia python installato)
+python -m http.server
+# Se non funziona python provare con python3
+# Digitare nella barra dell'URL del browser localhost:xxxx, dove xxxx è la porta indicata da python, normalmente è la 8000
+
+## Interfaccia:
+
+# L'interfaccia è composta da due sezioni: il contenitore delle cards e il pannello di controllo.
+# Il contenitore delle cards mostra la frase/acronimo da indovinare, insieme a campi di input e pulsanti per l'interazione.
+# Il pannello di controllo include opzioni per attivare la modalità scura, regolare le impostazioni #del timer e visualizzare le statistiche di gioco.
+
+## Usare il software - generale:
+
+# L'obiettivo è indovinare l'acronimo o la frase corretta visualizzata sulla card.
+# Se il timer è attivato, hai un tempo limitato per fare un'ipotesi. Altrimenti, puoi prenderti il tuo tempo.
+# Inserisci la tua ipotesi nel campo di input fornito e clicca su "Submit Guess" per verificare se è corretta.
+# Se la tua ipotesi è corretta, la card lampeggerà brevemente di verde e verrà visualizzata la prossima card.
+# Se hai almeno indovinato una lettera la card lampeggerà brevemente di giallo e verrà visualizzata la prossima card.
+# Se la tua ipotesi è sbagliata, la card lampeggerà brevemente di rosso e verrà visualizzata la prossima card.
+# Puoi anche cliccare sul pulsante "Hint" per rivelare una lettera casuale nella frase, ma questa opzione è disponibile solo se ci sono ancora lettere nascoste.
+# Se la colonna del csv è avvalorata, viene visualizzato sul bordo inferiore della card, da quale pdf/fonte è stato estratto l'acronimo.
+
+## Usare il software - timer:
+
+# Puoi attivare o disattivare il timer utilizzando la casella di controllo denominata "Timer duration".
+# Regola la durata del timer selezionando il tempo desiderato (5, 10 o 15 secondi) dal menu a discesa.
+
+## Modalità scura:
+
+# Passa tra la modalità chiara e scura utilizzando la casella di controllo "Dark mode".
+# La modalità scura offre un tema visivo diverso per l'interfaccia.
+
+## Punteggio:
+
+# Il software tiene traccia del totale delle risposte corrette e del totale delle domande risposte.
+# Questo dato è visualizzata nella sezione del contatore del pannello di controllo.
+
+## Fine del Gioco:
+
+## Il gioco termina quando tutti gli acronimi sono stati indovinati correttamente o quando non ci sono più domande senza risposta.
+# Una volta terminato il gioco, verrà visualizzato un messaggio "Game over" sulla card.
+
+
+## Note Aggiuntive:
+
+# Le frasi vengono caricate da una fonte dati esterna (data.csv) e mescolate.
+# Se hai bisogno di aggiungere o modificare acronimo, puoi farlo nel file CSV seguendo il formato: Acronym, Name, File Name, Include.
+# Le parole nella sezione Name che partono con una lettera minuscola non verranno nascoste
+# Impostando Include su 0 (invece che su 1) quella riga non verrà caricata.
+# Assicurati che il file CSV sia correttamente formattato e accessibile al software

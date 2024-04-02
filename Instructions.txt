@@ -1,0 +1,51 @@
+## Start the script.
+# Start the python server (assuming you have python installed).
+python -m http.server
+# If python doesn't work try python3.
+# Type in the browser URL bar localhost:xxxx, where xxxx is the port given by python, normally it is 8000
+
+## Interface:
+
+# The interface consists of two sections: the cards container and the control panel.
+# The cards container displays the phrase/acronym to be guessed, along with input fields and buttons for interaction.
+# The control panel includes options to turn on dark mode, adjust #timer settings, and view game statistics.
+
+## Using the software - general:
+
+# The goal is to guess the correct acronym or phrase displayed on the card.
+# If the timer is on, you have a limited time to make a guess. Otherwise, you can take your time.
+# Enter your guess in the input field provided and click "Submit Guess" to see if it is correct.
+# If your guess is correct, the card will flash green briefly and the next card will be displayed.
+# If you guessed at least one letter the card will briefly flash yellow and the next card will be displayed.
+# If your guess is wrong, the card will briefly flash red and the next card will be displayed.
+
+# You can also click on the "Hint" button to reveal a random letter in the sentence, but this option is only available if there are still hidden letters.
+# If the csv column is corroborated, it is displayed on the bottom edge of the card, from which pdf/source the acronym was extracted.
+
+## Using the software - timer:
+
+# You can turn the timer on or off using the checkbox named "Timer duration."
+# Adjust the timer duration by selecting the desired time (5, 10 or 15 seconds) from the drop-down menu.
+
+## Dark mode:
+
+# Switch between light and dark mode using the checkbox labeled "Dark mode."
+# Dark mode provides a different visual theme for the interface.
+
+## Score:
+
+# The software keeps track of total correct answers and total questions answered.
+# This data is displayed in the counter section of the control panel.
+
+## End of Game:
+
+# The game ends when all acronyms have been guessed correctly or when there are no more unanswered questions.
+# Once the game ends, a "Game over" message will be displayed on the card.
+
+## Additional Notes:
+
+# Phrases are loaded from an external data source (data.csv) and mixed.
+# If you need to add or change acronym, you can do so in the CSV file following the format: Acronym, Name, File Name, Include.
+# The words in the Name section starting with a lower case letter will not be hidden
+# By setting Include to 0 (instead of 1) that line will not be loaded.
+# Make sure the CSV file is properly formatted and accessible to the software.
