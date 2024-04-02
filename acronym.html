@@ -467,6 +467,7 @@
         }
 
         function overwriteString(originalString, substring, position) {
+            oneGuessed = false;
             if (position < 0 || position > originalString.length) {
                 throw new Error("Invalid position for overwriting");
             }
@@ -479,15 +480,17 @@
                 currentLetter = checkingPartInput[i];
                 if (currentLetter === "-") {
                     middlePart.push(substring[i]);
+                    oneGuessed = true;
                 } else {
                     middlePart.push(currentLetter);
                 }
             }
             middlePart = middlePart.join('');
-            return (
+            return ([oneGuessed, 
                 startingPart +
                 middlePart +
                 endindgPart
+            ]
             );
         }
 
@@ -528,7 +531,7 @@
                             for (let i = 0; i < indices_found.length; i++) {
                                 const guessIndex = indices_found[i];
                                 const guessedLetter = currentGuessedLetters[guessIndex];
-                                currentGuessedLetters = overwriteString(currentGuessedLetters, guessWord, guessIndex);
+                                [atLeastOneLetterCorrect, currentGuessedLetters] = overwriteString(currentGuessedLetters, guessWord, guessIndex);
                                 data[currentIndex].guessedLetters = currentGuessedLetters;
 
                                 if (guessedLetter === '-') {
